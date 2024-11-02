@@ -1,0 +1,58 @@
+{
+  "records": [
+    {
+      "id": "1",
+      "date": "2024-03-20T10:30:00",
+      "location": "EcoCenter Downtown",
+      "code": "847392",
+      "weight": 3.5,
+      "credits": 17.5,
+      "materials": ["Plastic", "Metal"]
+    },
+    {
+      "id": "2",
+      "date": "2024-03-18T15:45:00",
+      "location": "GreenPoint Recycling",
+      "code": "129834",
+      "weight": 2.8,
+      "credits": 14,
+      "materials": ["Paper", "Cardboard"]
+    },
+    {
+      "id": "3",
+      "date": "2024-03-15T09:15:00",
+      "location": "Sustainability Hub",
+      "code": "456789",
+      "weight": 5.2,
+      "credits": 26,
+      "materials": ["Glass", "Metal", "Plastic"]
+    },
+    {
+      "id": "4",
+      "date": "2024-03-15T09:15:00",
+      "location": "Sustainability Hub",
+      "code": "456789",
+      "weight": 5.2,
+      "credits": 26,
+      "materials": ["Glass", "Metal", "Plastic"]
+    },
+    {
+      "id": "5",
+      "date": "2024-03-15T09:15:00",
+      "location": "Sustainability Hub",
+      "code": "456789",
+      "weight": 5.2,
+      "credits": 26,
+      "materials": ["Glass", "Metal", "Plastic"]
+    },
+    {
+      "id": "6",
+      "date": "2024-03-15T09:15:00",
+      "location": "Sustainability Hub",
+      "code": "456789",
+      "weight": 5.2,
+      "credits": 26,
+      "materials": ["Glass", "Metal", "Plastic"]
+    }
+  ]
+}

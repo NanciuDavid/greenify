@@ -1,0 +1,152 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+
+type Utilizator = {
+  prenume: string;
+  nume: string;
+  email: string;
+  numarTelefon: string;
+  abonament: boolean;
+  deseuri_reciclate: number;
+};
+
+const utilizatoriDemo: Utilizator[] = [
+  {
+    prenume: "Ion",
+    nume: "Popescu",
+    email: "ion.popescu@exemplu.ro",
+    numarTelefon: "+40 755 123 456",
+    abonament: true,
+    deseuri_reciclate: 75,
+  },
+  {
+    prenume: "Maria",
+    nume: "Ionescu",
+    email: "maria.ionescu@exemplu.ro",
+    numarTelefon: "+40 744 987 654",
+    abonament: false,
+    deseuri_reciclate: 30,
+  },
+  {
+    prenume: "Andrei",
+    nume: "Popa",
+    email: "andrei.popa@exemplu.ro",
+    numarTelefon: "+40 722 246 135",
+    abonament: true,
+    deseuri_reciclate: 120,
+  },
+  {
+    prenume: "Elena",
+    nume: "Dumitrescu",
+    email: "elena.dumitrescu@exemplu.ro",
+    numarTelefon: "+40 733 369 258",
+    abonament: false,
+    deseuri_reciclate: 15,
+  },
+  {
+    prenume: "Mihai",
+    nume: "Stoica",
+    email: "mihai.stoica@exemplu.ro",
+    numarTelefon: "+40 766 159 753",
+    abonament: true,
+    deseuri_reciclate: 200,
+  },
+];
+
+const CREDITE_PER_KG = 5;
+
+export default function Leaderboard() {
+  const utilizatoriSortati = [...utilizatoriDemo]
+    .sort((a, b) => b.deseuri_reciclate - a.deseuri_reciclate)
+    .map((utilizator) => ({
+      ...utilizator,
+      credite: utilizator.deseuri_reciclate * CREDITE_PER_KG,
+    }));
+
+  const topTreiUtilizatori = [utilizatoriSortati[1], utilizatoriSortati[0], utilizatoriSortati[2]];
+
+  return (
+    <div className="mx-auto p-8 bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-green-900 min-h-screen">
+      <h1 className="text-4xl font-bold text-green-600 dark:text-green-400 mb-8">
+        Tabloul de Bord al Eco-Războinicilor
+      </h1>
+
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4 text-green-600 dark:text-green-400">Podiumul Top Reciclatori</h2>
+        <div className="flex justify-center items-end space-x-4">
+          {topTreiUtilizatori.map((utilizator, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <Avatar className="w-20 h-20 mb-2">
+                <AvatarImage
+                  src={`/placeholder.svg?height=80&width=80&text=${utilizator.prenume.charAt(0)}${utilizator.nume.charAt(0)}`}
+                />
+                <AvatarFallback>
+                  {utilizator.prenume.charAt(0)}
+                  {utilizator.nume.charAt(0)}
+                </AvatarFallback>
+              </Avatar>
+              <div
+                className={`bg-green-500 dark:bg-green-600 rounded-t-lg p-4 text-white text-center ${index === 1 ? "h-32" : index === 0 ? "h-24" : "h-21"}`}
+              >
+                <p className="font-bold">
+                  {utilizator.prenume} {utilizator.nume}
+                </p>
+                <p>{utilizator.deseuri_reciclate} kg</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {utilizatoriSortati.map((utilizator, index) => (
+          <Card
+            key={index}
+            className="overflow-hidden backdrop-blur-lg bg-white/30 dark:bg-gray-800/30 border-green-200 dark:border-green-700"
+          >
+            <CardContent className="p-6">
+              <div className="flex items-center space-x-4 mb-4">
+                <Avatar className="w-16 h-16">
+                  <AvatarImage
+                    src={`/placeholder.svg?height=64&width=64&text=${utilizator.prenume.charAt(0)}${utilizator.nume.charAt(0)}`}
+                  />
+                  <AvatarFallback>
+                    {utilizator.prenume.charAt(0)}
+                    {utilizator.nume.charAt(0)}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <h3 className="text-xl font-semibold text-green-600 dark:text-green-400">
+                    {utilizator.prenume} {utilizator.nume}
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{utilizator.email}</p>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm">
+                  <span className="font-semibold">Abonament:</span> {utilizator.abonament ? "Premium" : "Gratuit"}
+                </p>
+                <p className="text-sm">
+                  <span className="font-semibold">Deșeuri reciclate:</span> {utilizator.deseuri_reciclate} kg
+                </p>
+                <p className="text-sm">
+                  <span className="font-semibold">Credite:</span> {utilizator.credite}
+                </p>
+              </div>
+              <div className="mt-4">
+                <Badge variant={utilizator.abonament ? "default" : "secondary"} className="mr-2">
+                  {utilizator.abonament ? "Premium" : "Gratuit"}
+                </Badge>
+                <Badge variant="outline" className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
+                  {utilizator.deseuri_reciclate} kg reciclate
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}

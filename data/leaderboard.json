@@ -1,0 +1,40 @@
+{
+  "records": [
+    {
+      "id": "1",
+      "prenume": "Ana",
+      "nume": "Popescu",
+      "email": "ana.popescu@example.com",
+      "deseuri_reciclate": 150,
+      "credite": 300,
+      "abonament": true
+    },
+    {
+      "id": "2",
+      "prenume": "Ion",
+      "nume": "Ionescu",
+      "email": "ion.ionescu@example.com",
+      "deseuri_reciclate": 120,
+      "credite": 240,
+      "abonament": false
+    },
+    {
+      "id": "3",
+      "prenume": "Maria",
+      "nume": "Dumitrescu",
+      "email": "maria.dumitrescu@example.com",
+      "deseuri_reciclate": 180,
+      "credite": 360,
+      "abonament": true
+    },
+    {
+      "id": "4",
+      "prenume": "Andrei",
+      "nume": "Popa",
+      "email": "andrei.popa@example.com",
+      "deseuri_reciclate": 90,
+      "credite": 180,
+      "abonament": false
+    }
+  ]
+}
