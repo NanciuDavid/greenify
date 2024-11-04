@@ -38,9 +38,8 @@ const Map = ({ centers }: MapProps) => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [locations, setLocations] = useState<(Location | null)[]>([]);
 
-  console.log("API Key:", process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "AIzaSyCM-VOGaEXV2zhi22m4aFqgtP3BbubQySs");
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "AIzaSyCM-VOGaEXV2zhi22m4aFqgtP3BbubQySs",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     libraries: ["places"],
   });
 
@@ -93,15 +92,6 @@ const Map = ({ centers }: MapProps) => {
   const onUnmount = useCallback(() => {
     setMap(null);
   }, []);
-
-  if (!window.google) {
-    return (
-      <div className="p-4 text-red-600">
-        <p>Error: Google Maps JavaScript API not loaded.</p>
-        <p>Please check your internet connection and try again.</p>
-      </div>
-    );
-  }
 
   if (loadError) {
     console.error("Error loading Google Maps:", loadError);
