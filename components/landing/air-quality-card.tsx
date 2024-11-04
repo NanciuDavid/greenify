@@ -10,7 +10,7 @@ interface AirQuality {
   lastUpdated: string;
 }
 
-export function AirQualityCard() {
+export default function AirQualityCard() {
   const [airQuality, setAirQuality] = useState<AirQuality>({
     aqi: 72,
     status: "Moderate",

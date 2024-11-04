@@ -26,7 +26,7 @@ const highlights = [
   },
 ];
 
-export function CommunityHighlights() {
+export default function CommunityHighlights() {
   return (
     <section className="container px-4 py-24">
       <div className="text-center mb-16">

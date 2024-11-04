@@ -8,7 +8,7 @@ interface PlatformStats {
   active_centers: number;
 }
 
-export function StatsSection({ stats }: { stats: PlatformStats }) {
+export default function StatsSection({ stats }: { stats: PlatformStats }) {
   const statItems = [
     {
       icon: Users,

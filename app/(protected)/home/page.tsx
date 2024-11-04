@@ -1,10 +1,9 @@
-import { StatsSection } from "@/components/stats-section";
-import { Button } from "@/components/ui/button";
+import StatsSection from "@/components/landing/stats-section";
 import { createClient } from "@/utils/supabase/server";
-import { ArrowRight, InfoIcon, Leaf, Link } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { redirect } from "next/navigation";
 
-export default async function ProtectedPage() {
+export default async function HomePage() {
   const supabase = await createClient();
 
   const {

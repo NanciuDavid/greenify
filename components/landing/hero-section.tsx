@@ -1,7 +1,7 @@
 import { ArrowRight, Leaf } from "lucide-react";
 import { FC } from "react";
-import { Button } from "./ui/button";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 interface HeroSectionProps {
   defaultStats: { total_users: number; total_items_recycled: number; co2_saved: number; active_centers: number };

@@ -1,5 +1,5 @@
-import { FC } from "react";
 import RewardComponent from "@/components/rewards/rewards";
+import { FC } from "react";
 
 interface pageProps {}
 

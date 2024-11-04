@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { MapPin, QrCode, Trophy, Zap } from "lucide-react";
 
-export function HowItWorks() {
+export default function HowItWorks() {
   const steps = [
     {
       icon: MapPin,

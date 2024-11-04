@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Gift, Car, MapPin, Trophy, History, SquarePlus } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "./button";
-import AddDialog from "../ProfileDialog";
+import { Button } from "./ui/button";
+import AddDialog from "./ProfileDialog";
 
 interface FooterProps {}
 
@@ -44,7 +44,7 @@ const Footer: FC<FooterProps> = ({}) => {
           ))} */}
             <Link
               key="/map"
-              href={`/protected/map`}
+              href={`/map`}
               className={cn(
                 "transition-colors hover:text-foreground/80",
                 pathname === "/protected/map" ? "text-foreground" : "text-foreground/60",
@@ -56,7 +56,7 @@ const Footer: FC<FooterProps> = ({}) => {
             </Link>
             <Link
               key="/leaderboard"
-              href={`/protected/leaderboard`}
+              href={`/leaderboard`}
               className={cn(
                 "transition-colors hover:text-foreground/80",
                 pathname === "/protected/map" ? "text-foreground" : "text-foreground/60",
@@ -76,7 +76,7 @@ const Footer: FC<FooterProps> = ({}) => {
             </Button>
             <Link
               key="/history"
-              href={`/protected/history`}
+              href={`/history`}
               className={cn(
                 "transition-colors hover:text-foreground/80",
                 pathname === "/protected/map" ? "text-foreground" : "text-foreground/60",
@@ -88,7 +88,7 @@ const Footer: FC<FooterProps> = ({}) => {
             </Link>
             <Link
               key="/rewards"
-              href={`/protected/rewards`}
+              href={`/rewards`}
               className={cn(
                 "transition-colors hover:text-foreground/80",
                 pathname === "/protected/map" ? "text-foreground" : "text-foreground/60",

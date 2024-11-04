@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Navigation from "@/components/Navigation";
 import "@/app/globals.css";
-import Footer from "@/components/ui/Footer";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -19,9 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Navigation />
-          <main className="min-h-screen bg-background">{children}</main>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/protected/leaderboard/page.jsx",
+    "app/(protected)/leaderboard/page.jsx",
     "components/leaderboard/leaderboard.tsx.old"
   ],
   "exclude": ["node_modules"]
